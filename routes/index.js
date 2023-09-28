@@ -13,55 +13,30 @@ router.get('/', function (req, res, next) {
 module.exports = router;
 
 
-// router.get('/data', (req, res) => {
-//   try {
+router.get('/load', (req, res) => {
+  let sql = `
+  select 
+  p_name as productname,
+  p_price as price,
+  p_quantity as quantity
 
-//     let data = [];
+  from Products;`;
+  let data = [];
 
-//     data.push({
-//       itemecode: '1',
-//       brand: '2',
-//       description: '3',
-//       status: '4',
-//       createdby: '5',
-//       createddate: '6'
-//     })
+  mysql.SelectResult(sql, (err, result) => {
+    if (err) console.error("Error: ", err);
 
-//     let itemList = data.map((item) => new MasterItemModel(item['itemecode'], item['brand'], item['description', item['status'], item['createdby'], item['createddate']]));
+    result.forEach((key, item) => {
+      data.push({
+        productname: key.productname,
+        price: key.price,
+        quantity: key.quantity,
+      })
+    })
 
-//     let result = [];
-//     itemList.forEach((item) => {
-//       result.push({
-//         itemcode: item.itemcode,
-//       })
-//       console.log(`${item.itemcode}`);
-//     })
-
-//     res.json({
-//       msg: 'success',
-//       data: result
-//     })
-
-//   } catch (error) {
-//     res.json({
-//       msg: error
-//     })
-//   }
-// })
-
-// router.post('/getdata', (req, res) => {
-//   try {
-//     let id = req.body.branchid;
-
-//     console.log(id);
-
-//     res.json({
-//       msg: 'success'
-//     })
-
-//   } catch (error) {
-//     res.json({
-//       msg: error
-//     })
-//   }
-// })
+    res.json({
+      msg: 'success',
+      data: data
+    })
+  })
+});
