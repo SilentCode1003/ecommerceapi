@@ -1,0 +1,91 @@
+<script>
+    $(document).ready(function () {
+      LoadTable();
+  
+      function LoadTable() {
+        $("#sales-table").DataTable({
+          destroy: true,
+          processing: true,
+          serverSide: true,
+          paging: false,
+          searching: false,
+          info: false,
+          scrollY: 400,
+          scrollCollapse: true,
+          serverMethod: "GET",
+          ajax: {
+            url: "/currentassets/load",
+            dataSrc: (json) => {
+              var finalData = [];
+              var data = json.data;
+  
+              console.log(data);
+              $.each(data, (key, item) => {
+                var action = "";
+                var status = item.status;
+
+                action = `<ul class="wrapper">
+                          <li class="icon1 edit">
+                              <span class="tooltip">EDIT</span>
+                          <img id="icons" src="./images/icons/edit.png">
+                          </li>
+                          <li class="icon2 delete">
+                          <span class="tooltip">DELETE</span>
+                          <img id="icons" src="./images/icons/delete.png">
+                          </li>
+                      </ul>`;
+                        
+                finalData.push({
+                    reportid: item.reportid,
+                    reportdate: item.reportdate,
+                    salestotal: item.salestotal,
+                    revenuetotal: item.revenuetotal,
+                    action: action,
+                });
+              });
+  
+              return finalData;
+            },
+          },
+          columnDefs: [
+            {
+              targets: 1,
+              className: "td-indent",
+            },
+          ],
+          columns: [
+            { data: "reportid" },
+            { data: "reportdate" },
+            { data: "salestotal" },
+            { data: "revenuetotal" },
+            { data: "action" },
+          ],
+          initComplete: function () {},
+        });
+      }
+
+      $(document).on("click", "#addbtnsales", function () {
+        console.log("click");
+
+        var ca_saledate = $("#ca_saledate").val();
+        var ca_totalsales = $("#ca_totalsales").val();
+        var ca_totalrevenue = $("#ca_totalrevenue").val();
+
+        $.ajax({
+          type: "POST",
+          url: "/currentassets/save",
+          data: {
+            reportdate: ca_saledate,
+            salestotal: ca_totalsales,
+            revenuetotal: ca_totalrevenue,
+          },
+          success: function (result) {
+            LoadTable();
+          },
+          error: function (error) {
+            
+          },
+        });
+      });
+    });
+</script>

@@ -1,0 +1,181 @@
+<script>
+    $(document).ready(function () {
+      LoadTable();
+      LoadTable1();
+  
+      function LoadTable() {
+        $("#shipping-table").DataTable({
+          destroy: true,
+          processing: true,
+          serverSide: true,
+          paging: false,
+          searching: false,
+          info: false,
+          scrollY: 400,
+          scrollCollapse: true,
+          serverMethod: "GET",
+          ajax: {
+            url: "/shippingtax/load",
+            dataSrc: (json) => {
+              var finalData = [];
+              var data = json.data;
+  
+              console.log(data);
+              $.each(data, (key, item) => {
+                var action = "";
+                var status = item.status;
+
+                action = `<ul class="wrapper">
+                          <li class="icon1 edit">
+                              <span class="tooltip">EDIT</span>
+                          <img id="icons" src="./images/icons/edit.png">
+                          </li>
+                          <li class="icon2 delete">
+                          <span class="tooltip">DELETE</span>
+                          <img id="icons" src="./images/icons/delete.png">
+                          </li>
+                      </ul>`;
+                        
+                finalData.push({
+                    shippingmethodid: item.shippingmethodid,
+                    name: item.name,
+                    cost: item.cost,
+                    action: action,
+                });
+              });
+  
+              return finalData;
+            },
+          },
+          columnDefs: [
+            {
+              targets: 1,
+              className: "td-indent",
+            },
+          ],
+          columns: [
+            { data: "shippingmethodid" },
+            { data: "name" },
+            { data: "cost" },
+            { data: "action" },
+          ],
+          initComplete: function () {},
+        });
+      }
+
+      $(document).on("click", "#addbtnmethod", function () {
+        console.log("click");
+
+        var st_method = $("#st_method").val();
+        var st_price = $("#st_price").val();
+
+        $.ajax({
+          type: "POST",
+          url: "/shippingtax/save",
+          data: {
+            name: st_method,
+            cost: st_price,
+          },
+          success: function (result) {
+            LoadTable();
+          },
+          error: function (error) {
+            
+          },
+        });
+      });
+
+
+
+      // -------------------
+      // | TAX TABLE |
+      // -------------------
+
+
+
+      function LoadTable1() {
+        $("#tax-table").DataTable({
+          destroy: true,
+          processing: true,
+          serverSide: true,
+          paging: false,
+          searching: false,
+          info: false,
+          scrollY: 400,
+          scrollCollapse: true,
+          serverMethod: "GET",
+          ajax: {
+            url: "/shippingtax/load2",
+            dataSrc: (json) => {
+              var finalData = [];
+              var data = json.data;
+  
+              console.log(data);
+              $.each(data, (key, item) => {
+                var action = "";
+                var status = item.status;
+
+                action = `<ul class="wrapper">
+                          <li class="icon1 edit">
+                              <span class="tooltip">EDIT</span>
+                          <img id="icons" src="./images/icons/edit.png">
+                          </li>
+                          <li class="icon2 delete">
+                          <span class="tooltip">DELETE</span>
+                          <img id="icons" src="./images/icons/delete.png">
+                          </li>
+                      </ul>`;
+                        
+                finalData.push({
+                    taxrateid: item.taxrateid,
+                    name: item.name,
+                    rate: item.rate,
+                    location: item.location,
+                    action: action,
+                });
+              });
+  
+              return finalData;
+            },
+          },
+          columnDefs: [
+            {
+              targets: 1,
+              className: "td-indent",
+            },
+          ],
+          columns: [
+            { data: "taxrateid" },
+            { data: "name" },
+            { data: "rate" },
+            { data: "location" },
+            { data: "action" },
+          ],
+          initComplete: function () {},
+        });
+      }
+      $(document).on("click", "#addbtntax", function () {
+        console.log("click");
+
+        var st_taxmethod = $("#st_taxmethod").val();
+        var st_taxrate = $("#st_taxrate").val();
+        var st_location = $("#st_location").val();
+
+        $.ajax({
+          type: "POST",
+          url: "/shippingtax/save2",
+          data: {
+            name: st_taxmethod,
+            rate: st_taxrate,
+            location: st_location,
+          },
+          success: function (result) {
+            LoadTable1();
+          },
+          error: function (error) {
+            
+          },
+        });
+      });
+    });
+</script>

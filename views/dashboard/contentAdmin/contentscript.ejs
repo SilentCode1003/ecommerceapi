@@ -1,0 +1,188 @@
+<script>
+    $(document).ready(function () {
+      LoadTable();
+      LoadTable1();
+  
+      function LoadTable() {
+        $("#page-table").DataTable({
+          destroy: true,
+          processing: true,
+          serverSide: true,
+          paging: false,
+          searching: false,
+          info: false,
+          scrollY: 400,
+          scrollCollapse: true,
+          serverMethod: "GET",
+          ajax: {
+            url: "/content/load",
+            dataSrc: (json) => {
+              var finalData = [];
+              var data = json.data;
+  
+              console.log(data);
+              $.each(data, (key, item) => {
+                var action = "";
+                var status = item.status;
+
+                action = `<ul class="wrapper">
+                          <li class="icon1 edit">
+                              <span class="tooltip">EDIT</span>
+                          <img id="icons" src="./images/icons/edit.png">
+                          </li>
+                          <li class="icon2 delete">
+                          <span class="tooltip">DELETE</span>
+                          <img id="icons" src="./images/icons/delete.png">
+                          </li>
+                      </ul>`;
+                        
+                finalData.push({
+                    pageid: item.pageid,
+                    pagetitle: item.pagetitle,
+                    pagecontent: item.pagecontent,
+                    numclick: item.numclick,
+                    datepost: item.datepost,
+                    action: action,
+                });
+              });
+  
+              return finalData;
+            },
+          },
+          columnDefs: [
+            {
+              targets: 1,
+              className: "td-indent",
+            },
+          ],
+          columns: [
+            { data: "pageid" },
+            { data: "pagetitle" },
+            { data: "pagecontent" },
+            { data: "numclick" },
+            { data: "datepost" },
+            { data: "action" },
+          ],
+          initComplete: function () {},
+        });
+      }
+
+      $(document).on("click", "#addbtncontent", function () {
+        console.log("click");
+
+        var c_pagename = $("#c_pagename").val();
+        var c_pagecontent = $("#c_pagecontent").val();
+        var c_pageclick = $("#c_pageclick").val();
+        var c_publishdate = $("#c_publishdate").val();
+
+        $.ajax({
+          type: "POST",
+          url: "/content/save",
+          data: {
+            pagetitle: c_pagename,
+            pagecontent: c_pagecontent,
+            numclick: c_pageclick,
+            datepost: c_publishdate,
+          },
+          success: function (result) {
+            LoadTable();
+          },
+          error: function (error) {
+            
+          },
+        });
+      });
+
+
+
+      // -------------------
+      // | BLOG POST TABLE |
+      // -------------------
+
+
+
+      function LoadTable1() {
+        $("#blog-post-table").DataTable({
+          destroy: true,
+          processing: true,
+          serverSide: true,
+          paging: false,
+          searching: false,
+          info: false,
+          scrollY: 400,
+          scrollCollapse: true,
+          serverMethod: "GET",
+          ajax: {
+            url: "/content/load2",
+            dataSrc: (json) => {
+              var finalData = [];
+              var data = json.data;
+  
+              console.log(data);
+              $.each(data, (key, item) => {
+                var action = "";
+                var status = item.status;
+
+                action = `<ul class="wrapper">
+                          <li class="icon1 edit">
+                              <span class="tooltip">EDIT</span>
+                          <img id="icons" src="./images/icons/edit.png">
+                          </li>
+                          <li class="icon2 delete">
+                          <span class="tooltip">DELETE</span>
+                          <img id="icons" src="./images/icons/delete.png">
+                          </li>
+                      </ul>`;
+                        
+                finalData.push({
+                    blogpostid: item.blogpostid,
+                    blogetitle: item.blogetitle,
+                    blogcontent: item.blogcontent,
+                    publishdate: item.publishdate,
+                    action: action,
+                });
+              });
+  
+              return finalData;
+            },
+          },
+          columnDefs: [
+            {
+              targets: 1,
+              className: "td-indent",
+            },
+          ],
+          columns: [
+            { data: "blogpostid" },
+            { data: "blogetitle" },
+            { data: "blogcontent" },
+            { data: "publishdate" },
+            { data: "action" },
+          ],
+          initComplete: function () {},
+        });
+      }
+      $(document).on("click", "#addbtnblog", function () {
+        console.log("click");
+        var b_title = $("#b_title").val();
+        var b_blogcontent = $("#b_blogcontent").val();
+        var b_publishdate = $("#b_publishdate").val();
+
+        $.ajax({
+          type: "POST",
+          url: "/content/save2",
+          data: {
+            blogetitle: b_title,
+            blogcontent: b_blogcontent,
+            publishdate: b_publishdate,
+          },
+          success: function (result) {
+            LoadTable1();
+          },
+          error: function (error) {
+            
+          },
+        });
+      });
+    });
+</script>

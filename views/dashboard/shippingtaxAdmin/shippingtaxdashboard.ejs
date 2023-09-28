@@ -1,0 +1,126 @@
+<!-- Main Content Area -->
+<div class="page-holder">
+  <!-- ENTRIES CALLER -->
+  <div class="col-12 ml-auto d-flex justify-content-end button-holder">
+    <!-- SHOW ENTRIES -->
+    <button class="btn btn-dark mr-1" id="showButton">Entries</button>
+    <!-- HIDE ENTRIES -->
+    <button class="btn btn-danger" id="hideButton">Close</button>
+  </div>
+  
+  <!-- ENTRIES -->
+  <div class="mt-3" id="targetDiv" style="display: none;">
+      <!-- PAGE TITLE -->
+        <div class="col-sm-12 top-title-bar">
+          <label id="tittle-bar">METHOD</label>
+        </div>
+
+      <!-- ENTRIES CONTAINER -->
+        <div class="col-md-12 entry-container">
+          <div>
+            <!-- <form class="needs-validation combined-form" novalidate> -->
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="st_method">Method</label>
+                  <input id="st_method" name="st_method" type="text" class="form-control" id="p_name" placeholder="Product Name" required/>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="st_price">Shipping Price</label>
+                  <input id="st_price" name="st_price" type="number" class="form-control" id="p_price" placeholder="Product Price" step="0.01" required/>
+                </div>
+              </div>
+
+              <button id="addbtnmethod" class="btn btn-success" type="submit">+ Add</button>
+            <!-- </form> -->
+          </div>
+        </div>
+      <!-- CONTAINER END -->
+  </div>
+  <!-- END ENTRIES -->
+
+<!-- TABLE TITLE -->
+<div class="col-sm-12 mid-title-bar">
+  <label id="tittle-bar">SHIPPING TABLE</label>
+</div>
+  
+<!-- TABLE -->
+<div class="col-md-12 table-container">
+    <table id="shipping-table" class="table">
+      <thead>
+          <th>ID</th>
+          <th>Method of Shipping</th>
+          <th>Cost of Shipping</th>
+          <th>Action</th> 
+      </thead>
+      <tbody></tbody>
+    </table>
+</div>
+
+<!-- ------------------------------------------------------------------------------------------
+     ------------------------------------------ TAXS ------------------------------------------
+     ------------------------------------------------------------------------------------------ -->
+
+<!-- ENTRIES CALLER -->
+<div class="col-12 ml-auto mt-3 d-flex justify-content-end button-holder">
+  <!-- SHOW ENTRIES -->
+  <button class="btn btn-dark mr-1" id="showButton2">Entries</button>
+  <!-- HIDE ENTRIES -->
+  <button class="btn btn-danger" id="hideButton2">Close</button>
+</div>
+
+  <!-- ENTRIES -->
+  <div class="mt-3" id="targetDiv2" style="display: none;">
+      <!-- PAGE TITLE -->
+        <div class="col-sm-12 top-title-bar">
+          <label id="tittle-bar">TAX RATES</label>
+        </div>
+
+      <!-- ENTRIES CONTAINER -->
+        <div class="col-md-12 entry-container">
+          <div>
+            <!-- <form class="needs-validation combined-form" novalidate> -->
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="st_taxmethod">Method</label>
+                  <input id="st_taxmethod" name="st_taxmethod" type="text" class="form-control" id="p_name" placeholder="Product Name" required/>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label for="st_taxrate">Tax Rate</label>
+                  <input id="st_taxrate" name="st_taxrate" type="number" class="form-control" id="p_price" placeholder="Product Price" step="0.01" required/>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label for="st_location">Location</label>
+                  <input id="st_location" name="st_location" type="text" class="form-control" id="p_quantity" placeholder="Quantity Stock" required />
+                </div>
+              </div>
+
+              <button id="addbtntax" class="btn btn-success" type="submit">+ Add</button>
+            <!-- </form> -->
+          </div>
+        </div>
+      <!-- CONTAINER END -->
+  </div>
+  <!-- END ENTRIES -->
+
+<!-- TABLE TITLE -->
+<div class="col-sm-12 mid-title-bar">
+  <label id="tittle-bar">TAX TABLE</label>
+</div>
+
+<!-- TABLE -->
+<div class="col-md-12 table-container">
+    <table id="tax-table" class="table">
+      <thead>
+          <th>ID</th>
+          <th>Method</th>
+          <th>Tax Rate</th>
+          <th>Location</th>
+          <th>Action</th>
+      </thead>
+      <tbody></tbody>
+    </table>
+</div>
+
+</div>  

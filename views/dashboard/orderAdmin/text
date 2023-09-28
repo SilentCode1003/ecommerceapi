@@ -1,0 +1,110 @@
+    <!-- LINE -->
+    <div class="col-sm-12 top-title-bar">
+        <label id="tittle-bar">ORDER MANAGEMENT</label>
+    </div>
+    <!-- END LINE -->
+        
+    <!-- ENTRY -->
+    <div class="col-md-12 entry-container">
+        <div>
+            <form class="needs-validation order-form" novalidate>
+                <!-- Order Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="o_orderid">Order ID</label>
+                        <input type="text" class="form-control" id="o_orderid" placeholder="Order ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="o_customerid">Customer ID</label>
+                        <input type="text" class="form-control" id="o_customerid" placeholder="Customer ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="o_orderdate">Order Date</label>
+                        <input type="datetime-local" class="form-control" id="o_orderdate" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid order date.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="o_totalamount">Total Amount</label>
+                        <input type="number" class="form-control" id="o_totalamount" placeholder="Total Amount" step="0.01" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="o_orderstatus">Order Status</label>
+                        <input type="text" class="form-control" id="o_orderstatus" placeholder="Order Status" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Order Item Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="oi_order_item_id">Order Item ID</label>
+                        <input type="text" class="form-control" id="oi_order_item_id" placeholder="Order Item ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="oi_orderid">Order ID (Reference)</label>
+                        <input type="text" class="form-control" id="oi_orderid" placeholder="Order ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="oi_productid">Product ID</label>
+                        <input type="text" class="form-control" id="oi_productid" placeholder="Product ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="oi_quantity">Quantity</label>
+                        <input type="number" class="form-control" id="oi_quantity" placeholder="Quantity" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="oi_unitprice">Unit Price</label>
+                        <input type="number" class="form-control" id="oi_unitprice" placeholder="Unit Price" step="0.01" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="oi_subtotal">Subtotal</label>
+                        <input type="number" class="form-control" id="oi_subtotal" placeholder="Subtotal" step="0.01" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+    
+                <button class="btn btn-success" type="submit">+ Add Order and Order Item</button>
+            </form>
+        </div>
+    </div>
+    <!-- END ENTRY -->
+        
+    <!-- LINE -->
+    <div class="col-sm-12 mid-title-bar">
+        <label id="tittle-bar">PRODUCT TABLE</label>
+    </div>
+    <!-- END LINE -->

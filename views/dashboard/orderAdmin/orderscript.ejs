@@ -1,0 +1,95 @@
+<script>
+    $(document).ready(function () {
+      LoadTable();
+  
+      function LoadTable() {
+        $("#order-join-table").DataTable({
+          destroy: true,
+          processing: true,
+          serverSide: true,
+          paging: false,
+          searching: false,
+          info: false,
+          scrollY: 400,
+          scrollCollapse: true,
+          serverMethod: "GET",
+          ajax: {
+            url: "/order/load",
+            dataSrc: (json) => {
+              var finalData = [];
+              var data = json.data;
+  
+              console.log(data);
+              $.each(data, (key, item) => {
+                var action = "";
+                var status = item.status;
+
+                action = `<ul class="wrapper">
+                          <li class="icon1 edit">
+                              <span class="tooltip">EDIT</span>
+                          <img id="icons" src="./images/icons/edit.png">
+                          </li>
+                          <li class="icon2 delete">
+                          <span class="tooltip">DELETE</span>
+                          <img id="icons" src="./images/icons/delete.png">
+                          </li>
+                      </ul>`;
+                        
+                finalData.push({
+                    orderid: item.orderid,
+                    customerid: item.customerid,
+                    orderstatus: item.orderstatus,
+                    orderdate: item.orderdate,
+                    totalamount: item.totalamount,
+                    action: action,
+                });
+              });
+  
+              return finalData;
+            },
+          },
+          columnDefs: [
+            {
+              targets: 1,
+              className: "td-indent",
+            },
+          ],
+          columns: [
+            { data: "orderid" },
+            { data: "customerid" },
+            { data: "orderstatus" },
+            { data: "orderdate" },
+            { data: "totalamount" },
+            { data: "action" },
+          ],
+          initComplete: function () {},
+        });
+      }
+      
+    $(document).on("click", "#addbtnorder", function () {
+      console.log("click");
+
+      var o_customerid = $("#o_customerid").val();
+      var o_orddate = $("#o_orddate").val();
+      var o_totalamount = $("#o_totalamount").val();
+      var o_ordstatus = $("#o_ordstatus").val();
+
+      $.ajax({
+        type: "POST",
+        url: "/order/save",
+        data: {
+          customerid: o_customerid,
+          orderdate: o_orddate,
+          totalamount: o_totalamount,
+          status: o_ordstatus,
+        },
+        success: function (result) {
+          LoadTable();
+        },
+        error: function (error) {
+          
+        },
+      });
+    });
+    });
+</script>

@@ -1,0 +1,94 @@
+    <!-- LINE -->
+    <div class="col-sm-12 top-title-bar">
+        <label id="tittle-bar">INVENTORY MANAGEMENT</label>
+    </div>
+    <!-- END LINE -->
+        
+    <!-- ENTRY -->
+    <div class="col-md-12 entry-container">
+        <div>
+            <form class="needs-validation supplier-inventory-form" novalidate>
+                <!-- Supplier Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="s_supplierid">Supplier ID</label>
+                        <input type="text" class="form-control" id="s_supplierid" placeholder="Supplier ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="s_name">Supplier Name</label>
+                        <input type="text" class="form-control" id="s_name" placeholder="Supplier Name" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="s_contactinfo">Contact Info</label>
+                        <input type="text" class="form-control" id="s_contactinfo" placeholder="Contact Info" required>
+                        <div class="invalid-tooltip">
+                            Please provide valid contact info.
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Inventory Transaction Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="it_transactionid">Transaction ID</label>
+                        <input type="text" class="form-control" id="it_transactionid" placeholder="Transaction ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="it_productid">Product ID</label>
+                        <input type="text" class="form-control" id="it_productid" placeholder="Product ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="it_transactiondate">Transaction Date</label>
+                        <input type="datetime-local" class="form-control" id="it_transactiondate" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid transaction date.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="it_transactiontype">Transaction Type</label>
+                        <input type="text" class="form-control" id="it_transactiontype" placeholder="Transaction Type" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="it_quantity">Quantity</label>
+                        <input type="number" class="form-control" id="it_quantity" placeholder="Quantity" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="it_notes">Notes</label>
+                        <input type="text" class="form-control" id="it_notes" placeholder="Notes" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+    
+                <button class="btn btn-success" type="submit">+ Add Supplier and Inventory Transaction</button>
+            </form>
+        </div>
+    </div>
+    <!-- END ENTRY -->
+        
+    <!-- LINE -->
+    <div class="col-sm-12 mid-title-bar">
+        <label id="tittle-bar">PRODUCT TABLE</label>
+    </div>
+    <!-- END LINE -->

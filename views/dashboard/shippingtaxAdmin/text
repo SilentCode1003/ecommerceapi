@@ -1,0 +1,155 @@
+    <!-- LINE -->
+    <div class="col-sm-12 top-title-bar">
+        <label id="tittle-bar">SHIPPING TAX</label>
+    </div>
+    <!-- END LINE -->
+        
+    <!-- ENTRY -->
+    <div class="col-md-12 entry-container">
+        <div>
+            <form class="needs-validation shipping-tax-settings-form" novalidate>
+                <!-- Shipping Method Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="sm_shippingid">Shipping Method ID</label>
+                        <input type="text" class="form-control" id="sm_shippingid" placeholder="Shipping Method ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="sm_name">Shipping Method Name</label>
+                        <input type="text" class="form-control" id="sm_name" placeholder="Shipping Method Name" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="sm_description">Description</label>
+                        <input type="text" class="form-control" id="sm_description" placeholder="Description" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="sm_cost">Cost</label>
+                        <input type="number" class="form-control" id="sm_cost" placeholder="Cost" step="0.01" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="sm_isactive">Is Active</label>
+                        <input type="text" class="form-control" id="sm_isactive" placeholder="Is Active" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Tax Rate Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="tr_taxid">Tax Rate ID</label>
+                        <input type="text" class="form-control" id="tr_taxid" placeholder="Tax Rate ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="tr_name">Tax Rate Name</label>
+                        <input type="text" class="form-control" id="tr_name" placeholder="Tax Rate Name" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="tr_ratepercentage">Rate Percentage</label>
+                        <input type="number" class="form-control" id="tr_ratepercentage" placeholder="Rate Percentage" step="0.01" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="tr_isactive">Is Active</label>
+                        <input type="text" class="form-control" id="tr_isactive" placeholder="Is Active" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Tax Settings Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="ts_settingid">Tax Setting ID</label>
+                        <input type="text" class="form-control" id="ts_settingid" placeholder="Tax Setting ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="ts_taxid">Tax Rate ID</label>
+                        <input type="text" class="form-control" id="ts_taxid" placeholder="Tax Rate ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="ts_applytoshipping">Apply to Shipping</label>
+                        <input type="text" class="form-control" id="ts_applytoshipping" placeholder="Apply to Shipping" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Shipping Settings Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="ss_settingid">Shipping Setting ID</label>
+                        <input type="text" class="form-control" id="ss_settingid" placeholder="Shipping Setting ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="ss_defaultshippingid">Default Shipping ID</label>
+                        <input type="text" class="form-control" id="ss_defaultshippingid" placeholder="Default Shipping ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="ss_freeshippingminamount">Free Shipping Min Amount</label>
+                        <input type="number" class="form-control" id="ss_freeshippingminamount" placeholder="Free Shipping Min Amount" step="0.01" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="ss_applytax">Apply Tax</label>
+                        <input type="text" class="form-control" id="ss_applytax" placeholder="Apply Tax" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+    
+                <button class="btn btn-success" type="submit">+ Add Shipping, Tax, and Settings</button>
+            </form>
+        </div>
+    </div>
+    <!-- END ENTRY -->
+        
+    <!-- LINE -->
+    <div class="col-sm-12 mid-title-bar">
+        <label id="tittle-bar">PRODUCT TABLE</label>
+    </div>
+    <!-- END LINE -->

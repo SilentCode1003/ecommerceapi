@@ -1,0 +1,46 @@
+// const ctx = document.getElementById('myChart');
+  // $.ajax({
+  //   type: 'GET',
+  //   url: '/product/getproductdetails',
+  //   success: function (result) {
+  //       var data = result.data;
+
+  //       // Identifier it use to get the data on the database
+  //       let productname = [];
+  //       let quantity = [];
+
+  //       // This for each works to get the value of the identifier
+  //       $.each(data, function (key, item) {
+  //           productname.push(item.productname) 
+  //           quantity.push(item.quantity)
+  //         });
+
+  //         // Checker
+  //         // console.log(productname)
+  //         // console.log(quantity)
+
+  //       new Chart(ctx, {
+  //       type: 'bar',
+  //       data: {
+  //         // THE VALUE OF EACH LABEL {data: productname}
+  //         labels: productname,
+  //         datasets: [{
+  //           label: '# SALES',
+  //           // THE VALUE OF EACH BAR {data: quantity}
+  //           data: quantity,
+  //           borderWidth: 2
+  //         }]
+  //       },
+  //       options: {
+  //         scales: {
+  //           y: {
+  //             beginAtZero: true
+  //           }
+  //         }
+  //       }
+  //     });
+  //   },
+  //   error: function (err) {
+  //       errormsg(err);
+  //   }
+  // })

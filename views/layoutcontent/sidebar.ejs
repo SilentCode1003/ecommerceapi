@@ -1,0 +1,98 @@
+<nav id="sidebar">
+  <!-- IWANT HERE -->
+  <div class="sidebar-logo text-center">
+    <!-- Logo -->
+    <img src="/images/logo/logo.png" alt="Logo" class="logo-img" />
+
+    <!-- Label -->
+    <div class="logo-label">5L Ecommerce</div>
+  </div>
+
+  <ul class="list-unstyled components">
+    <li>
+      <button
+        class="btn btn-dark sidebar-menu"
+        type="button"
+        id="sidebarCollapse"
+      >
+        <i class="fa-solid fa-list" style="color: #ffffff"></i>
+      </button>
+    </li>
+    <li>
+      <a href="/">
+        <img class="sidebar-icons" src="/images/sidebar/dashboard.png" />
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a href="product">
+        <img class="sidebar-icons" src="/images/sidebar/product.png" />
+        Product
+      </a>
+    </li>
+    <li>
+      <a href="customer">
+        <img class="sidebar-icons" src="/images/sidebar/customer.png" />
+        Customer
+      </a>
+    </li>
+    <li>
+      <a href="inventory">
+        <img class="sidebar-icons" src="/images/sidebar/inventory.png" />
+        Inventory
+      </a>
+    </li>
+    <li>
+      <a href="content">
+        <img class="sidebar-icons" src="/images/sidebar/content.png" />
+        Content
+      </a>
+    </li>
+    <li>
+      <a href="order">
+        <img class="sidebar-icons" src="/images/sidebar/order.png" />
+        Order
+      </a>
+    </li>
+    <li>
+      <a
+        href="#pageSubmenu"
+        data-toggle="collapse"
+        aria-expanded="false"
+        class="dropdown-toggle" 
+      >
+        <img class="sidebar-icons" src="/images/sidebar/transaction.png" />
+        Transaction
+      </a>
+      <ul class="collapse list-unstyled" id="pageSubmenu">
+        <li class="nav-item">
+          <a class="nav-link" href="currentassets">
+            <img class="sidebar-icons" src="/images/sidebar/sales.png" />
+            <label id="dd-label">Sales revenue</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="incentives">
+            <img class="sidebar-icons" src="/images/sidebar/incentive.png" />
+            <label id="dd-label">Incentives</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="shippingtax">
+            <img class="sidebar-icons" src="/images/sidebar/shiptaxing.png" />
+            <label id="dd-label"> Shipping Tax </label>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul id="pageSettings" style="margin-bottom: 50px">
+    <li class="nav-item">
+      <a href="setting" class="nav-link">
+        <img class="sidebar-icons" src="/images/sidebar/menu.png" />
+        <label id="dd-label">Menu</label>
+      </a>
+    </li>
+  </ul>
+</nav>

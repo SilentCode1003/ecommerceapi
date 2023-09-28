@@ -1,0 +1,92 @@
+<!-- MAIN CONTENT -->
+<div class="page-holder">
+  <!-- ENTRIES CALLER -->
+    <div class="col-12 ml-auto d-flex justify-content-end button-holder">
+      <!-- SHOW ENTRIES -->
+      <button class="btn btn-dark mr-1" id="showButton">Entries</button>
+      <!-- HIDE ENTRIES -->
+      <button class="btn btn-danger" id="hideButton">Close</button>
+    </div>
+
+    <!-- ENTRIES -->
+    <div class="col-12 mt-3" id="targetDiv" style="display: none;">
+        <!-- PAGE TITLE -->
+          <div class="col-sm-12 top-title-bar">
+            <label id="tittle-bar">INVENTORY MANAGEMENT</label>
+          </div>
+
+        <!-- ENTRIES CONTAINER -->
+          <div class="col-md-12 entry-container">
+            <div>
+                <!-- <form class="needs-validation supplier-inventory-form" novalidate> -->
+
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="it_productid">Product ID</label>
+                            <input id="it_productid" name="it_productid" type="text" class="form-control" id="it_transactionid" placeholder="Transaction ID" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="it_serialnumber">Serial Number</label>
+                            <input id="it_serialnumber" name="it_serialnumber" type="text" class="form-control" id="it_productid" placeholder="Product ID" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="it_purchasedate">Purchase Date</label>
+                            <input id="it_purchasedate" name="it_purchasedate" type="datetime-local" class="form-control" id="it_transactiondate" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="it_status">Status</label>
+                            <input id="it_status" name="it_status" type="text" class="form-control" id="it_transactiontype" placeholder="Transaction Type" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="it_purchaseprice">Purchase Price</label>
+                            <input id="it_purchaseprice" name="it_purchaseprice" type="number" class="form-control" id="it_quantity" placeholder="Quantity" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="it_location">Location</label>
+                            <input id="it_location" name="it_location" type="text" class="form-control" id="it_notes" placeholder="Notes" required>
+                        </div>
+                        
+                        <div class="col-md-4 mb-3">
+                          <label for="it_notes">Notes</label>
+                          <input id="it_notes" name="it_notes" type="text" class="form-control" id="it_notes" placeholder="Notes" required>
+                      </div>
+                    </div>
+        
+                    <button id="addbtninventory" class="btn btn-success" type="submit">+ Add</button>
+                <!-- </form> -->
+            </div>
+          </div>
+        <!-- CONTAINER END-->
+    </div>
+    <!-- END ENTRIES -->
+
+    <!-- TABLE TITLE -->
+    <div class="col-sm-12 mid-title-bar">
+      <label id="tittle-bar">INVENTORY TABLE</label>
+    </div>
+
+    <!-- TABLE -->
+    <div class="col-md-12 table-container">
+        <table id="Inventory-join-table" class="table">
+          <thead>
+              <th>InventoryItem ID</th>
+              <th>Product ID</th>
+              <th>Serial Number</th>
+              <th>Status</th>
+              <th>Purchase Date</th>
+              <th>Purchase Price</th>
+              <th>Location</th>
+              <th>Items Notes</th>
+              <th>Actions</th>
+          </thead>
+          <tbody></tbody>
+        </table>    
+    </div>
+  </div>  

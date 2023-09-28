@@ -1,0 +1,120 @@
+    <!-- LINE -->
+    <div class="col-sm-12 top-title-bar">
+        <label id="tittle-bar">CUSTOMER MANAGEMENT</label>
+    </div>
+    <!-- END LINE -->
+        
+    <!-- ENTRY -->
+    <div class="col-md-12 entry-container">
+        <div>
+            <div class="customer-entries">
+                <form class="needs-validation payment-customer-form" novalidate>
+                    <!-- Payment Section -->
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="p_paymentid">Payment ID</label>
+                            <input type="text" class="form-control" id="p_paymentid" placeholder="Payment ID" required>
+                            <div class="valid-tooltip">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="p_orderid">Order ID</label>
+                            <input type="text" class="form-control" id="p_orderid" placeholder="Order ID" required>
+                            <div class="valid-tooltip">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="p_paymentdate">Payment Date</label>
+                            <input type="datetime-local" class="form-control" id="p_paymentdate" required>
+                            <div class="invalid-tooltip">
+                                Please provide a valid payment date.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="p_paymentamount">Payment Amount</label>
+                            <input type="number" class="form-control" id="p_paymentamount" placeholder="Payment Amount" step="0.01" required>
+                                <div class="valid-tooltip">
+                                    Looks good!
+                                </div>
+                            </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="p_paymentstatus">Payment Status</label>
+                            <input type="text" class="form-control" id="p_paymentstatus" placeholder="Payment Status" required>
+                            <div class="valid-tooltip">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Customer Section -->
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="c_customerid">Customer ID</label>
+                            <input type="text" class="form-control" id="c_customerid" placeholder="Customer ID" required>
+                            <div class="valid-tooltip">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="c_firstname">First Name</label>
+                            <input type="text" class="form-control" id="c_firstname" placeholder="First Name" required>
+                            <div class="valid-tooltip">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="c_lastname">Last Name</label>
+                            <input type="text" class="form-control" id="c_lastname" placeholder="Last Name" required>
+                            <div class="invalid-tooltip">
+                                Please provide a valid last name.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="c_email">Email</label>
+                            <input type="email" class="form-control" id="c_email" placeholder="Email" required>
+                            <div class="invalid-tooltip">
+                                Please provide a valid email address.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="c_phone">Phone</label>
+                            <input type="tel" class="form-control" id="c_phone" placeholder="Phone" required>
+                            <div class="invalid-tooltip">
+                                Please provide a valid phone number.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="c_address">Address</label>
+                            <input type="text" class="form-control" id="c_address" placeholder="Address" required>
+                            <div class="invalid-tooltip">
+                                Please provide a valid address.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="c_registrationdate">Registration Date</label>
+                            <input type="datetime-local" class="form-control" id="c_registrationdate" required>
+                            <div class="invalid-tooltip">
+                                Please provide a valid registration date.
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-success" type="submit">+ Add Payment and Customer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END ENTRY -->
+        
+    <!-- LINE -->
+    <div class="col-sm-12 mid-title-bar">
+        <label id="tittle-bar">PRODUCT TABLE</label>
+    </div>
+    <!-- END LINE -->

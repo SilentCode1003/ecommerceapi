@@ -1,0 +1,76 @@
+<!-- MAIN CONTENT -->
+<div class="page-holder">
+  <!-- ENTRIES CALLER -->
+  <div class="col-12 ml-auto d-flex justify-content-end button-holder">
+    <!-- SHOW ENTRIES -->
+    <button class="btn btn-dark mr-1" id="showButton">Entries</button>
+    <!-- HIDE ENTRIES -->
+    <button class="btn btn-danger" id="hideButton">Close</button>
+  </div>
+
+    <!-- ENTRIES -->
+    <div class="mt-3" id="targetDiv" style="display: none;">
+        <!-- PAGE TITLE -->
+          <div class="col-sm-12 top-title-bar">
+            <label id="tittle-bar">NEW COUPUNS</label>
+          </div>
+
+        <!-- ENTRIES CONTAINER -->
+          <div class="col-md-12 entry-container">
+            <div>
+              <!-- <form class="needs-validation combined-form" novalidate> -->
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label for="i_coupcode">Coupuns Code</label>
+                    <input name="i_coupcode" id="i_coupcode" type="text" class="form-control" id="p_name" placeholder="Product Name" required/>
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <label for="i_couppercent">Percentage</label>
+                    <input name="i_couppercent" id="i_couppercent" type="number" class="form-control" id="p_quantity" placeholder="Quantity Stock" required />
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <label for="i_couplimit">Usage Limit</label>
+                    <input name="i_couplimit" id="i_couplimit" name="i_couponscode" type="number" class="form-control" id="p_quantity" placeholder="Quantity Stock" required />
+                  </div> 
+                </div>
+
+                <div class="form-row">
+                  <div class="col-md-3 mb-3">
+                    <label for="i_coupexdate">Expiration Date</label>
+                    <input name="i_coupexdate" id="i_coupexdate" type="datetime-local" class="form-control" id="p_updatedat" required/>
+                  </div>
+
+                  <div class="col-md-4 mb-3" style="margin-top: 32px;">
+                    <button class="btn btn-success" type="submit" name="addbtncoupon" id="addbtncoupon">+ Add</button>
+                  </div>
+                </div>
+
+              <!-- </form> -->
+            </div>
+          </div>
+        <!-- CONTAINER END -->
+    </div>
+    <!-- END ENTRIES -->
+
+  <!-- TABLE TITLE -->
+  <div class="col-sm-12 mid-title-bar">
+    <label id="tittle-bar">COUPONS TABLE</label>
+  </div>
+
+  <!-- TABLE -->
+  <div class="col-md-12 table-container">
+      <table id="coupons-table" class="table">
+        <thead>
+            <th>ID</th>
+            <th>Coupons Code</th>
+            <th>Percentage</th>
+            <th>Expiration Date</th>
+            <th>Usage Limit</th>
+            <th>Action</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+  </div>
+</div>

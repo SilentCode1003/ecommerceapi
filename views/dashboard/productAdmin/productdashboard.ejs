@@ -1,0 +1,101 @@
+<!-- MAIN CONTENT -->
+<div class="page-holder">
+  <!-- ENTRIES CALLER -->
+  <div class="col-12 ml-auto d-flex justify-content-end button-holder">
+    <!-- SHOW ENTRIES -->
+    <button class="btn btn-dark mr-1" id="showButton">Entries</button>
+    <!-- HIDE ENTRIES -->
+    <button class="btn btn-danger" id="hideButton">Close</button>
+  </div>
+
+    <!-- ENTRIES -->
+    <div class="mt-3" id="targetDiv" style="display: none;">
+        <!-- PAGE TITLE -->
+          <div class="col-sm-12 top-title-bar">
+            <label id="tittle-bar">NEW PRODUCT</label>
+          </div>
+
+        <!-- ENTRIES CONTAINER -->
+          <div class="col-md-12 entry-container">
+            <div>
+              <!-- <form class="needs-validation combined-form" novalidate> -->
+
+                <div class="form-row"> 
+                  <div class="col-md-4 mb-3">
+                    <label for="p_name">Product Name</label>
+                    <input name="p_name" id="p_name" type="text" class="form-control" id="p_name" placeholder="Product Name" required/>
+                  </div>
+                  
+                  <div class="col-md-4 mb-3">
+                    <label for="p_price">Product Price</label>
+                    <input name="p_price" id="p_price" type="number" class="form-control" id="p_price" placeholder="Product Price" step="0.01" required/>
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <label for="p_quantity">Quantity Stock</label>
+                    <input name="p_quantity" id="p_quantity" type="number" class="form-control" id="p_quantity" placeholder="Quantity Stock" required />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label for="p_categoryid">Category ID</label>
+                    <input name="p_categoryid" id="p_categoryid" type="text" class="form-control" id="c_categoryid" placeholder="Category ID" required/>
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <label for="p_description">Description</label>
+                    <input name="p_description" id="p_description" type="text" class="form-control" id="c_categoryid" placeholder="Category ID" required/>
+                  </div>
+                </div>
+                  
+                <div class="form-row">
+                  <div class="col-md-3 mb-3">
+                    <label for="p_image">Product Image</label>
+                    <input name="p_image" id="p_image" type="file" class="form-control" id="p_image" required />
+                  </div>
+
+                  <div class="col-md-3 mb-3">
+                    <label for="p_createdat">Created At</label>
+                    <input name="p_createdat" id="p_createdat" type="datetime-local" class="form-control" id="p_createdat" required/>
+                  </div>
+
+                  <div class="col-md-3 mb-3">
+                    <label for="p_updatedat">Updated At</label>
+                    <input name="p_updatedat" id="p_updatedat" type="datetime-local" class="form-control" id="p_updatedat" required/>
+                  </div>
+                </div>
+                 
+                <button class="btn btn-success" type="submit" name="addbtnproduct" id="addbtnproduct">+ Add</button>
+              <!-- </form> -->
+            </div>
+          </div>
+        <!-- CONTAINER END -->
+    </div>
+    <!-- END ENTRIES -->
+
+
+  <!-- TABLE TITLE -->
+  <div class="col-sm-12 mid-title-bar">
+    <label id="tittle-bar">PRODUCT TABLE</label>
+  </div>
+
+  <!-- TABLE -->
+  <div class="col-md-12 table-container">
+      <table id="product-table" class="table">
+        <thead>
+            <th class="col-2">ID</th>
+            <th>Image</th>
+            <th>Product Name</th>
+            <th>Category Name</th>
+            <th>Category ID</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Create Date</th>
+            <th>Update</th>
+            <th>Action</th>
+        </thead>  
+        <tbody></tbody>
+      </table>
+  </div>
+</div>

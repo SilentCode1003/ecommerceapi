@@ -1,0 +1,107 @@
+<script>
+    $(document).ready(function () {
+      LoadTable();
+  
+      function LoadTable() {
+        $("#Inventory-join-table").DataTable({
+          destroy: true,
+          processing: true,
+          serverSide: true,
+          paging: false,
+          searching: false,
+          info: false,
+          scrollY: 400,
+          scrollCollapse: true,
+          serverMethod: "GET",
+          ajax: {
+            url: "/inventory/load",
+            dataSrc: (json) => {
+              var finalData = [];
+              var data = json.data;
+  
+              console.log(data);
+              $.each(data, (key, item) => {
+                var action = "";
+                var status = item.status;
+
+                action = `<ul class="wrapper">
+                          <li class="icon1 edit">
+                              <span class="tooltip">EDIT</span>
+                          <img id="icons" src="./images/icons/edit.png">
+                          </li>
+                          <li class="icon2 delete">
+                          <span class="tooltip">DELETE</span>
+                          <img id="icons" src="./images/icons/delete.png">
+                          </li>
+                      </ul>`;
+                        
+                finalData.push({
+                    inventoryitemid: item.inventoryitemid,
+                    productid: item.productid,
+                    serialnumber: item.serialnumber,
+                    status: item.status,
+                    purchasedate: item.purchasedate,
+                    purchaseprice: item.purchaseprice,
+                    location: item.location,
+                    inventorynotes: item.inventorynotes,
+                    action: action,
+                });
+              });
+  
+              return finalData;
+            },
+          },
+          columnDefs: [
+            {
+              targets: 1,
+              className: "td-indent",
+            },
+          ],
+          columns: [
+            { data: "inventoryitemid" },
+            { data: "productid" },
+            { data: "serialnumber" },
+            { data: "status" },
+            { data: "purchasedate" },
+            { data: "purchaseprice" },
+            { data: "location" },
+            { data: "inventorynotes" },
+            { data: "action" },
+          ],
+          initComplete: function () {},
+        });
+      }
+
+      $(document).on("click", "#addbtninventory", function () {
+        console.log("click");
+
+        var it_productid = $("#it_productid").val();
+        var it_serialnumber = $("#it_serialnumber").val();
+        var it_purchasedate = $("#it_purchasedate").val();
+        var it_status = $("#it_status").val();
+        var it_purchaseprice = $("#it_purchaseprice").val();
+        var it_location = $("#it_location").val();
+        var it_notes = $("#it_notes").val();
+
+        $.ajax({
+          type: "POST",
+          url: "/inventory/save",
+          data: {
+            productid: it_productid,
+            serialnumber: it_serialnumber,
+            status: it_purchasedate,
+            purchasedate: it_status,
+            purchaseprice: it_purchaseprice,
+            location: it_location,
+            inventorynotes: it_notes,
+          },
+          success: function (result) {
+            LoadTable();
+          },
+          error: function (error) {
+            
+          },
+        });
+      });
+    });
+</script>

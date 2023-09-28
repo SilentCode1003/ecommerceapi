@@ -1,0 +1,117 @@
+<!-- LINE -->
+    <div class="col-sm-12 top-title-bar">
+        <label id="tittle-bar">INCENTIVES</label>
+    </div>
+    <!-- END LINE -->
+        
+    <!-- ENTRY -->
+    <div class="col-md-12 entry-container">
+        <div>
+            <form class="needs-validation coupon-couponproduct-form" novalidate>
+                <!-- Coupon Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="c_couponid">Coupon ID</label>
+                        <input type="text" class="form-control" id="c_couponid" placeholder="Coupon ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="c_code">Coupon Code</label>
+                        <input type="text" class="form-control" id="c_code" placeholder="Coupon Code" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="c_discounttype">Discount Type</label>
+                        <input type="text" class="form-control" id="c_discounttype" placeholder="Discount Type" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="c_discountvalue">Discount Value</label>
+                        <input type="number" class="form-control" id="c_discountvalue" placeholder="Discount Value" step="0.01" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="c_startdate">Start Date</label>
+                        <input type="datetime-local" class="form-control" id="c_startdate" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid start date.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="c_enddate">End Date</label>
+                        <input type="datetime-local" class="form-control" id="c_enddate" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid end date.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="c_maxuses">Max Uses</label>
+                        <input type="number" class="form-control" id="c_maxuses" placeholder="Max Uses" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="c_usedcount">Used Count</label>
+                        <input type="number" class="form-control" id="c_usedcount" placeholder="Used Count" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="c_isactive">Is Active</label>
+                        <input type="text" class="form-control" id="c_isactive" placeholder="Is Active" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Coupon-Product Mapping Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="cp_id">Coupon-Product ID</label>
+                        <input type="text" class="form-control" id="cp_id" placeholder="Coupon-Product ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="cp_couponid">Coupon ID</label>
+                        <input type="text" class="form-control" id="cp_couponid" placeholder="Coupon ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="cp_productid">Product ID</label>
+                        <input type="text" class="form-control" id="cp_productid" placeholder="Product ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+    
+                <button class="btn btn-success" type="submit">+ Add Coupon and Coupon-Product Mapping</button>
+            </form>
+        </div>
+    </div>
+    <!-- END ENTRY -->
+        
+    <!-- LINE -->
+    <div class="col-sm-12 mid-title-bar">
+        <label id="tittle-bar">PRODUCT TABLE</label>
+    </div>
+    <!-- END LINE -->
