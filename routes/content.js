@@ -75,6 +75,33 @@ router.post('/save', (req, res) => {
 
 });
 
+// THIS ROUTE GIVE WAY TO ACCESS THE DATABASE AND PROMT THE DATA TO THE CHART
+router.get('/getchartdata', (req, res) => {
+  let sql = `
+  select
+    p_numclick as numclick,
+    p_title as pagetitle
+
+  from pages;`;
+  let data = [];
+
+  mysql.SelectResult(sql, (err, result) => {
+    if (err) console.error("Error: ", err);
+
+    result.forEach((key, item) => {
+      data.push({
+        numclick: key.numclick,
+        pagetitle: key.pagetitle,
+      })
+    })
+
+    res.json({
+      msg: 'success',
+      data: data
+    })
+  })
+});
+
 // -------------------
 // | BLOG POST TABLE |
 // -------------------

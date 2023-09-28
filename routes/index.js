@@ -2,9 +2,10 @@ var express = require('express');
 var router = express.Router();
 const { MasterItemModel } = require('./model/modelclass')
 
+const mysql = require('./repository/eccomercedb')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
@@ -12,55 +13,55 @@ router.get('/', function(req, res, next) {
 module.exports = router;
 
 
-router.get('/data', (req, res) => {
-  try {
+// router.get('/data', (req, res) => {
+//   try {
 
-    let data = [];
+//     let data = [];
 
-    data.push({
-      itemecode: '1',
-      brand: '2',
-      description: '3',
-      status: '4',
-      createdby: '5',
-      createddate: '6'
-    })
+//     data.push({
+//       itemecode: '1',
+//       brand: '2',
+//       description: '3',
+//       status: '4',
+//       createdby: '5',
+//       createddate: '6'
+//     })
 
-    let itemList = data.map((item) => new MasterItemModel(item['itemecode'], item['brand'], item['description', item['status'], item['createdby'], item['createddate']]));
+//     let itemList = data.map((item) => new MasterItemModel(item['itemecode'], item['brand'], item['description', item['status'], item['createdby'], item['createddate']]));
 
-    let result = [];
-    itemList.forEach((item) => {
-      result.push({
-        itemcode: item.itemcode,
-      })
-      console.log(`${item.itemcode}`);
-    })
+//     let result = [];
+//     itemList.forEach((item) => {
+//       result.push({
+//         itemcode: item.itemcode,
+//       })
+//       console.log(`${item.itemcode}`);
+//     })
 
-    res.json({
-      msg: 'success',
-      data: result
-    })
+//     res.json({
+//       msg: 'success',
+//       data: result
+//     })
 
-  } catch (error) {
-    res.json({
-      msg: error
-    })
-  }
-})
+//   } catch (error) {
+//     res.json({
+//       msg: error
+//     })
+//   }
+// })
 
-router.post('/getdata', (req, res) => {
-  try {
-    let id = req.body.branchid;
+// router.post('/getdata', (req, res) => {
+//   try {
+//     let id = req.body.branchid;
 
-    console.log(id);
+//     console.log(id);
 
-    res.json({
-      msg: 'success'
-    })
+//     res.json({
+//       msg: 'success'
+//     })
 
-  } catch (error) {
-    res.json({
-      msg: error
-    })
-  }
-})
+//   } catch (error) {
+//     res.json({
+//       msg: error
+//     })
+//   }
+// })

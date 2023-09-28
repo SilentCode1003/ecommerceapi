@@ -1,4 +1,118 @@
 <script>
+$(document).ready(function () {
+    LoadTable();
+
+    function LoadTable() {
+      $("#product-table").DataTable({
+        destroy: true,
+        processing: true,
+        serverSide: true,
+        paging: false,
+        searching: false,
+        info: false,
+        scrollY: 400,
+        scrollCollapse: true,
+        serverMethod: "GET",
+        ajax: {
+          url: "/product/load",
+          dataSrc: (json) => {
+            var finalData = [];
+            var data = json.data;
+
+            console.log(data);
+            $.each(data, (key, item) => {
+              var action = "";
+              var status = item.status;
+
+              action = `<ul class="wrapper">
+                          <li class="icon1 edit">
+                              <span class="tooltip">EDIT</span>
+                          <img id="icons" src="./images/icons/edit.png">
+                          </li>
+                          <li class="icon2 delete">
+                          <span class="tooltip">DELETE</span>
+                          <img id="icons" src="./images/icons/delete.png">
+                          </li>
+                      </ul>`;
+
+              // var base64 = "Lagayan ng base64 na text from sir joseph na cute";
+
+              finalData.push({
+                productid: item.productid,
+                image: `<img src="data:image/png;base64,${item.image}" alt="#" />`,
+                productname: item.productname,
+                categoryname: item.categoryname,
+                categoryid: item.categoryid,
+                price: item.price,
+                quantity: item.quantity,
+                insertdate: item.insertdate,
+                updtdate: item.updtdate,
+                action: action,
+              });
+            });
+
+            return finalData;
+          },
+        },
+        columnDefs: [
+          {
+            targets: 1,
+            className: "td-indent",
+          },
+        ],
+        columns: [
+          { data: "productid" },
+          { data: "image" },
+          { data: "productname" },
+          { data: "categoryname" },
+          { data: "categoryid" },
+          { data: "price" },
+          { data: "quantity" },
+          { data: "insertdate" },
+          { data: "updtdate" },
+          { data: "action" },
+        ],
+        initComplete: function () {},
+      });
+    }
+
+    // This is the id on your entries in dashboard
+    $(document).on("click", "#addbtnproduct", function () {
+      console.log("click");
+      // var p_name = $("#p_name").val();
+      // var p_description = $("#p_description").val();
+      // var p_price = $("#p_price").val();
+      // var p_quantity = $("#p_quantity").val();
+      // var p_categoryid = $("#p_categoryid").val();
+      // var p_image = $("#p_image").val();
+      // var p_createdat = $("#p_createdat").val();
+      // var p_updatedat = $("#p_updatedat").val();
+
+      $.ajax({
+        type: "POST",
+        url: "/product/save",
+        // The first variable should be same on router.post('/save',(req,res)=> {
+        // The second variable should be same on $(document).on("click", "#idNameOnYourEntries", function () {
+        data: {
+          // name: p_name,
+          // description: p_description,
+          // price: p_price,
+          // quantity: p_quantity,
+          // categoryid: p_categoryid,
+          // image: p_image,
+          // createdat: p_createdat,
+          // updatedat: p_updatedat,
+        },
+        success: function (result) {
+          LoadTable();
+        },
+        error: function (error) {},
+      });
+    });
+  });  
+
+
+  // THIS AREA IS FOR THE CHARTS
   const cht = document.getElementById("LineChart");
   $.ajax({
     type: "GET",
@@ -27,10 +141,28 @@
           labels: reportdate,
           datasets: [
             {
-              label: "# SALES",
+              label: "SALES",
               // THE VALUE OF EACH BAR {data: salestotal}
               data: salestotal,
-              borderWidth: 2,
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(255, 159, 64, 0.2)",
+                "rgba(255, 205, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(201, 203, 207, 0.2)",
+              ],
+              borderColor: [
+                "rgb(255, 99, 132)",
+                "rgb(255, 159, 64)",
+                "rgb(255, 205, 86)",
+                "rgb(75, 192, 192)",
+                "rgb(54, 162, 235)",
+                "rgb(153, 102, 255)",
+                "rgb(201, 203, 207)",
+              ],
+              borderWidth: 3,
             },
           ],
         },
@@ -79,6 +211,24 @@
               label: "Orders",
               // THE VALUE OF EACH BAR {data: salestotal}
               data: salestotal,
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(255, 159, 64, 0.2)",
+                "rgba(255, 205, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(201, 203, 207, 0.2)",
+              ],
+              borderColor: [
+                "rgb(255, 99, 132)",
+                "rgb(255, 159, 64)",
+                "rgb(255, 205, 86)",
+                "rgb(75, 192, 192)",
+                "rgb(54, 162, 235)",
+                "rgb(153, 102, 255)",
+                "rgb(201, 203, 207)",
+              ],
               borderWidth: 2,
             },
           ],
@@ -105,29 +255,47 @@
       var data = result.data;
 
       // Identifier it use to get the data on the database
-      let datepost = [];
+      let pagetitle = [];
       let numclick = [];
 
       // This for each works to get the value of the identifier
       $.each(data, function (key, item) {
-        datepost.push(item.datepost);
+        pagetitle.push(item.pagetitle);
         numclick.push(item.numclick);
       });
 
       // Checker
-      console.log(datepost);
+      console.log(pagetitle);
       console.log(numclick);
 
       new Chart(bchrt, {
         type: "bar",
         data: {
           // THE VALUE OF EACH LABEL {data: reportdate}
-          labels: datepost,
+          labels: pagetitle,
           datasets: [
             {
-              label: "Orders",
+              label: "Page",
               // THE VALUE OF EACH BAR {data: salestotal}
               data: numclick,
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(255, 159, 64, 0.2)",
+                "rgba(255, 205, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(201, 203, 207, 0.2)",
+              ],
+              borderColor: [
+                "rgb(255, 99, 132)",
+                "rgb(255, 159, 64)",
+                "rgb(255, 205, 86)",
+                "rgb(75, 192, 192)",
+                "rgb(54, 162, 235)",
+                "rgb(153, 102, 255)",
+                "rgb(201, 203, 207)",
+              ],
               borderWidth: 2,
             },
           ],
