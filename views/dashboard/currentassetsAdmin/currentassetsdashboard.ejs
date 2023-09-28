@@ -1,0 +1,64 @@
+<!-- MAIN CONTENT -->
+<div class="page-holder">
+    <!-- ENTRIES CALLER -->
+    <div class="col-12 ml-auto d-flex justify-content-end button-holder">
+      <!-- SHOW ENTRIES -->
+      <button class="btn btn-dark mr-1" id="showButton">Entries</button>
+      <!-- HIDE ENTRIES -->
+      <button class="btn btn-danger" id="hideButton">Close</button>
+    </div>
+
+    <!-- ENTRIES -->
+    <div class="mt-3" id="targetDiv" style="display: none;">
+        <!-- PAGE TITLE -->
+          <div class="col-sm-12 top-title-bar">
+            <label id="tittle-bar">SALES REVENUE</label>
+          </div>
+
+        <!-- ENTRIES CONTAINER -->
+          <div class="col-md-12 entry-container">
+            <div>
+                <!-- <form class="needs-validation sale-form" novalidate> -->
+                    <!-- Sale Section -->
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="ca_saledate">Report Date</label>
+                            <input id="ca_saledate" name="ca_saledate" type="datetime-local" class="form-control" id="s_saledate" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="ca_totalsales">Sales Total</label>
+                            <input id="ca_totalsales" name="ca_totalsales" type="number" class="form-control" id="s_productid" placeholder="Product ID" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="ca_totalrevenue">Revenue Total</label>
+                            <input id="ca_totalrevenue" name="ca_totalrevenue" type="number" class="form-control" id="s_quantity" placeholder="Quantity" required>
+                        </div>
+                    </div>
+        
+                    <button id="addbtnsales" class="btn btn-success" type="submit">+ Add Sale</button>
+                <!-- </form> -->
+            </div>
+          </div>
+        <!-- CONTAINER END -->
+    </div>
+    <!-- END ENTRIES -->
+
+    <!-- TABLE TITLE -->
+    <div class="col-sm-12 mid-title-bar">
+      <label id="tittle-bar">SALES TABLE</label>
+    </div>
+
+    <!-- TABLE -->
+    <div class="col-md-12 table-container">
+        <table id="sales-table" class="table">
+            <thead>
+                <th>Report ID</th>
+                <th>Report Date</th>
+                <th>Sales Total</th>
+                <th>Revenue Total</th>
+                <th>Action</th>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+  </div>  

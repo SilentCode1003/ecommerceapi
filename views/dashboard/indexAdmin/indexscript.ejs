@@ -1,0 +1,148 @@
+<script>
+  const cht = document.getElementById("LineChart");
+  $.ajax({
+    type: "GET",
+    url: "/currentassets/getchartdata",
+    success: function (result) {
+      var data = result.data;
+
+      // Identifier it use to get the data on the database
+      let reportdate = [];
+      let salestotal = [];
+
+      // This for each works to get the value of the identifier
+      $.each(data, function (key, item) {
+        reportdate.push(item.reportdate);
+        salestotal.push(item.salestotal);
+      });
+
+      // Checker
+      console.log(reportdate);
+      console.log(salestotal);
+
+      new Chart(cht, {
+        type: "line",
+        data: {
+          // THE VALUE OF EACH LABEL {data: reportdate}
+          labels: reportdate,
+          datasets: [
+            {
+              label: "# SALES",
+              // THE VALUE OF EACH BAR {data: salestotal}
+              data: salestotal,
+              borderWidth: 2,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    },
+    error: function (err) {
+      errormsg(err);
+    },
+  });
+
+  const ctx = document.getElementById("DoughnutChart");
+  $.ajax({
+    type: "GET",
+    url: "/currentassets/getchartdata",
+    success: function (result) {
+      var data = result.data;
+
+      // Identifier it use to get the data on the database
+      let reportdate = [];
+      let salestotal = [];
+
+      // This for each works to get the value of the identifier
+      $.each(data, function (key, item) {
+        reportdate.push(item.reportdate);
+        salestotal.push(item.salestotal);
+      });
+
+      // Checker
+      console.log(reportdate);
+      console.log(salestotal);
+
+      new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          // THE VALUE OF EACH LABEL {data: reportdate}
+          labels: reportdate,
+          datasets: [
+            {
+              label: "Orders",
+              // THE VALUE OF EACH BAR {data: salestotal}
+              data: salestotal,
+              borderWidth: 2,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    },
+    error: function (err) {
+      errormsg(err);
+    },
+  });
+
+  const bchrt = document.getElementById("BarChart");
+  $.ajax({
+    type: "GET",
+    url: "/content/getchartdata",
+    success: function (result) {
+      var data = result.data;
+
+      // Identifier it use to get the data on the database
+      let datepost = [];
+      let numclick = [];
+
+      // This for each works to get the value of the identifier
+      $.each(data, function (key, item) {
+        datepost.push(item.datepost);
+        numclick.push(item.numclick);
+      });
+
+      // Checker
+      console.log(datepost);
+      console.log(numclick);
+
+      new Chart(bchrt, {
+        type: "bar",
+        data: {
+          // THE VALUE OF EACH LABEL {data: reportdate}
+          labels: datepost,
+          datasets: [
+            {
+              label: "Orders",
+              // THE VALUE OF EACH BAR {data: salestotal}
+              data: numclick,
+              borderWidth: 2,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    },
+    error: function (err) {
+      errormsg(err);
+    },
+  });
+</script>

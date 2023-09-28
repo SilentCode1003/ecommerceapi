@@ -1,0 +1,130 @@
+<h1 style="margin-top: -25px;">Dashboard</h1>
+
+<div class="container-fluid d-flex flex-column">
+  <!-- TOP STATS -->
+  <div class="row">
+    <!-- ORDERS -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: #36A2EB;">ORDERS (MONTHLY)</div>
+              <div class="h5 mb-0 font-weight-bold text-secondary">40,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDERS -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: #FF4069;">RETURNS (MONTHLY)</div>
+              <div class="h5 mb-0 font-weight-bold text-secondary">95,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SALES -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-uppercase mb-1" style="color:#FF9C3B;">SALES (MONTHLY)</div>
+              <div class="h5 mb-0 font-weight-bold text-secondary">₱890,000,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVENUE -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: #4BC0C0;">REVENUE (MONTHLY)</div>
+              <div class="h5 mb-0 font-weight-bold text-secondary">₱20,780,800</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHARTS -->
+  <div class="row">
+    <!-- LINE CHART (SALES) -->
+    <div class="col-xl-8 col-md-6 mb-4">
+      <div class="card shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col mr-2">
+              <canvas id="LineChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Doughnut CHART (SALES) -->
+    <div class="col-xl-4 col-md-6 mb-4 ">
+      <div class="card shadow h-100 py-2" style="background-color: #262626;">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col mr-2">
+              <canvas id="DoughnutChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- BAR CHART -->
+    <div class="col-xl-6 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters d-flex flex-column align-items-start">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-uppercase mb-1" style="color:#FF9C3B;">NUMBER OF CLICKS</div>
+            </div>
+            <div class="col-auto">
+              <canvas id="BarChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIST TABLE -->
+    <div class="col-xl-6 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters d-flex flex-column align-items-start">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: #7443d7;">PRODUCT LIST</div>
+            </div>
+            <div class="col-auto">
+              <table class="table" id="inventory-list-dashboard">
+                <tr>
+                  <td>NAME</td>
+                  <td>PRICE</td>
+                  <td>QUANTITY</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

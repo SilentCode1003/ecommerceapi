@@ -1,0 +1,78 @@
+    <!-- LINE -->
+    <div class="col-sm-12 top-title-bar">
+        <label id="tittle-bar">SALES REVENUE</label>
+    </div>
+    <!-- END LINE -->
+        
+    <!-- ENTRY -->
+    <div class="col-md-12 entry-container">
+        <div>
+            <form class="needs-validation sale-form" novalidate>
+                <!-- Sale Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="s_saleid">Sale ID</label>
+                        <input type="text" class="form-control" id="s_saleid" placeholder="Sale ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="s_saledate">Sale Date</label>
+                        <input type="datetime-local" class="form-control" id="s_saledate" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid sale date.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="s_customerid">Customer ID</label>
+                        <input type="text" class="form-control" id="s_customerid" placeholder="Customer ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="s_productid">Product ID</label>
+                        <input type="text" class="form-control" id="s_productid" placeholder="Product ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="s_quantity">Quantity</label>
+                        <input type="number" class="form-control" id="s_quantity" placeholder="Quantity" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="s_unitprice">Unit Price</label>
+                        <input type="number" class="form-control" id="s_unitprice" placeholder="Unit Price" step="0.01" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="s_totalamount">Total Amount</label>
+                        <input type="number" class="form-control" id="s_totalamount" placeholder="Total Amount" step="0.01" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+    
+                <button class="btn btn-success" type="submit">+ Add Sale</button>
+            </form>
+        </div>
+    </div>
+    <!-- END ENTRY -->
+        
+    <!-- LINE -->
+    <div class="col-sm-12 mid-title-bar">
+        <label id="tittle-bar">PRODUCT TABLE</label>
+    </div>
+    <!-- END LINE -->

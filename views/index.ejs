@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include("./layoutcontent/header.ejs")%>
+  </head>
+  <body>
+    <!-- Topbar Content -->
+    <%- include("./layoutcontent/topbar.ejs")%>
+    <!-- Topbar Content End -->
+    <main>
+
+        <!-- Sidebar Content -->
+        <%- include("./layoutcontent/sidebar.ejs")%>
+        <!-- Sidebar Content End -->
+        
+        <!-- Page Content -->
+        <div id="content">
+
+          <!-- Main Content -->
+          <%- include("./dashboard/indexAdmin/indexdashboard.ejs")%>
+          <!-- Main Content End -->
+          
+          </div>
+    <main>
+      <!-- Optional JavaScript -->
+    <%- include("./layoutcontent/scripts.ejs")%>
+    <!-- Optional JavaScript -->
+    <%- include("./dashboard/indexAdmin/indexscript.ejs")%>
+    
+       
+</body>
+</html>

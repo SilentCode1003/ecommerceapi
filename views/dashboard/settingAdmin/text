@@ -1,0 +1,357 @@
+<!-- LINE -->
+    <div class="col-sm-12 top-title-bar">
+        <label id="tittle-bar">SECURITY</label>
+    </div>
+<!-- END LINE -->
+
+
+    <!-- SETTING CONTENT -->
+    <div class="col-md-12 entry-container">
+        <div>
+            <form class="needs-validation system-user-settings-form" novalidate>
+                <!-- System Setting Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="s_settingid">Setting ID</label>
+                        <input type="text" class="form-control" id="s_settingid" placeholder="Setting ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="s_settingkey">Setting Key</label>
+                        <input type="text" class="form-control" id="s_settingkey" placeholder="Setting Key" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="s_settingvalue">Setting Value</label>
+                        <input type="text" class="form-control" id="s_settingvalue" placeholder="Setting Value" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="s_description">Description</label>
+                        <input type="text" class="form-control" id="s_description" placeholder="Description" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="s_datatype">Data Type</label>
+                        <input type="text" class="form-control" id="s_datatype" placeholder="Data Type" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="s_isactive">Is Active</label>
+                        <input type="text" class="form-control" id="s_isactive" placeholder="Is Active" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Setting Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="us_usersettingid">User Setting ID</label>
+                        <input type="text" class="form-control" id="us_usersettingid" placeholder="User Setting ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="us_userid">User ID</label>
+                        <input type="text" class="form-control" id="us_userid" placeholder="User ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="us_settingid">Setting ID</label>
+                        <input type="text" class="form-control" id="us_settingid" placeholder="Setting ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="us_uservalue">User Value</label>
+                        <input type="text" class="form-control" id="us_uservalue" placeholder="User Value" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-success" type="submit">+ Add System Setting and User Setting</button>
+            </form>
+        </div>
+    </div>
+    <!-- SETTING CONTENT END -->
+
+
+
+<!-- LINE -->
+    <div class="col-sm-12 mid-title-bar">
+        <label id="tittle-bar">SECURITY</label>
+    </div>
+<!-- END LINE -->
+
+    <!-- SECURITY CONTENT -->
+    <div class="col-md-12 entry-container">
+        <div>
+            <form class="needs-validation log-token-form" novalidate>
+                <!-- Log Entry Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="al_logid">Log ID</label>
+                        <input type="text" class="form-control" id="al_logid" placeholder="Log ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="al_userid">User ID</label>
+                        <input type="text" class="form-control" id="al_userid" placeholder="User ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="al_action">Action</label>
+                        <input type="text" class="form-control" id="al_action" placeholder="Action" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="al_timestamp">Timestamp</label>
+                        <input type="datetime-local" class="form-control" id="al_timestamp" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid timestamp.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="al_ipaddress">IP Address</label>
+                        <input type="text" class="form-control" id="al_ipaddress" placeholder="IP Address" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Token Entry Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="prt_tokenid">Token ID</label>
+                        <input type="text" class="form-control" id="prt_tokenid" placeholder="Token ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="prt_userid">User ID</label>
+                        <input type="text" class="form-control" id="prt_userid" placeholder="User ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="prt_token">Token</label>
+                        <input type="text" class="form-control" id="prt_token" placeholder="Token" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="prt_expirationdate">Expiration Date</label>
+                        <input type="datetime-local" class="form-control" id="prt_expirationdate" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid expiration date.
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-success" type="submit">+ Add Log Entry and Token Entry</button>
+            </form>
+        </div>
+    </div> 
+    <!-- SECURITY CONTENT END -->
+
+
+
+<!-- LINE -->
+    <div class="col-sm-12 mid-title-bar">
+        <label id="tittle-bar">PERMISSION</label>
+    </div>
+<!-- END LINE -->
+
+    <!-- PERMISSION CONTENT -->
+    <div class="col-md-12 entry-container">
+        <div>
+            <form class="needs-validation roles-permissions-users-form" novalidate>
+                <!-- Role Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="r_roleid">Role ID</label>
+                        <input type="text" class="form-control" id="r_roleid" placeholder="Role ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="r_rolename">Role Name</label>
+                        <input type="text" class="form-control" id="r_rolename" placeholder="Role Name" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="r_description">Description</label>
+                        <input type="text" class="form-control" id="r_description" placeholder="Description" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Permission Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="p_permissionid">Permission ID</label>
+                        <input type="text" class="form-control" id="p_permissionid" placeholder="Permission ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="p_permissionname">Permission Name</label>
+                        <input type="text" class="form-control" id="p_permissionname" placeholder="Permission Name" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="p_description">Description</label>
+                        <input type="text" class="form-control" id="p_description" placeholder="Description" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role-Permission Mapping Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="rp_rolepermissionid">Role-Permission ID</label>
+                        <input type="text" class="form-control" id="rp_rolepermissionid" placeholder="Role-Permission ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="rp_roleid">Role ID</label>
+                        <input type="text" class="form-control" id="rp_roleid" placeholder="Role ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="rp_permissionid">Permission ID</label>
+                        <input type="text" class="form-control" id="rp_permissionid" placeholder="Permission ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Role Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="ur_userroleid">User-Role ID</label>
+                        <input type="text" class="form-control" id="ur_userroleid" placeholder="User-Role ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="ur_userid">User ID</label>
+                        <input type="text" class="form-control" id="ur_userid" placeholder="User ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="ur_roleid">Role ID</label>
+                        <input type="text" class="form-control" id="ur_roleid" placeholder="Role ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="u_userid">User ID</label>
+                        <input type="text" class="form-control" id="u_userid" placeholder="User ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="u_username">Username</label>
+                        <input type="text" class="form-control" id="u_username" placeholder="Username" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="u_passwordhash">Password Hash</label>
+                        <input type="password" class="form-control" id="u_passwordhash" placeholder="Password Hash" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="u_email">Email</label>
+                        <input type="email" class="form-control" id="u_email" placeholder="Email" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="u_isactive">Is Active</label>
+                        <input type="text" class="form-control" id="u_isactive" placeholder="Is Active" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="u_createdat">Created At</label>
+                        <input type="datetime-local" class="form-control" id="u_createdat" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid creation date.
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-success" type="submit">+ Add Roles, Permissions, Role-Permission, User-Role, and Users</button>
+            </form>
+        </div>
+    </div>
+    <!-- PERMISSION CONTENT END -->

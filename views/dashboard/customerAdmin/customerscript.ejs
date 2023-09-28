@@ -1,0 +1,99 @@
+<script>
+  $(document).ready(function () {
+    LoadTable();
+
+    function LoadTable() {
+      $("#customer-table").DataTable({
+        destroy: true,
+        processing: true,
+        serverSide: true,
+        paging: false,
+        searching: false,
+        info: false,
+        scrollY: 400,
+        scrollCollapse: true,
+        serverMethod: "GET",
+        ajax: {
+          url: "/customer/load",
+          dataSrc: (json) => {
+            var finalData = [];
+            var data = json.data;
+
+            console.log(data);
+            $.each(data, (key, item) => {
+              var action = "";
+              var status = item.status;
+
+              action = `<ul class="wrapper">
+                          <li class="icon1 edit">
+                              <span class="tooltip">EDIT</span>
+                          <img id="icons" src="./images/icons/edit.png">
+                          </li>
+                          <li class="icon2 delete">
+                          <span class="tooltip">DELETE</span>
+                          <img id="icons" src="./images/icons/delete.png">
+                          </li>
+                      </ul>`;
+
+              finalData.push({
+                customerid: item.customerid,
+                firstname: item.firstname,
+                lastname: item.lastname,
+                email: item.email,
+                phone: item.phone,
+                address: item.address,
+                action: action,
+              });
+            });
+
+            return finalData;
+          },
+        },
+        columnDefs: [
+          {
+            targets: 1,
+            className: "td-indent",
+          },
+        ],
+        columns: [
+          { data: "customerid" },
+          { data: "firstname" },
+          { data: "lastname" },
+          { data: "email" },
+          { data: "phone" },
+          { data: "address" },
+          { data: "action" },
+        ],
+        initComplete: function () {},
+      });
+    }
+
+    $(document).on("click", "#addbtncustomer", function () {
+      console.log("click");
+
+      var c_fname = $("#c_fname").val();
+      var c_lname = $("#c_lname").val();
+      var c_email = $("#c_email").val();
+      var c_phone = $("#c_phone").val();
+      var c_address = $("#c_address").val();
+
+      $.ajax({
+        type: "POST",
+        url: "/customer/save",
+        data: {
+          firstname: c_fname,
+          lastname: c_lname,
+          email: c_email,
+          phone: c_phone,
+          address: c_address,
+        },
+        success: function (result) {
+          LoadTable();
+        },
+        error: function (error) {
+          
+        },
+      });
+    });
+  });
+</script>

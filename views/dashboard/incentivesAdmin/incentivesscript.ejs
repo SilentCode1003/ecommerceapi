@@ -1,0 +1,94 @@
+<script>
+    $(document).ready(function () {
+      LoadTable();
+  
+      function LoadTable() {
+        $("#coupons-table").DataTable({
+          destroy: true,
+          processing: true,
+          serverSide: true,
+          paging: false,
+          searching: false,
+          info: false,
+          scrollY: 400,
+          scrollCollapse: true,
+          serverMethod: "GET",
+          ajax: {
+            url: "/incentives/load",
+            dataSrc: (json) => {
+              var finalData = [];
+              var data = json.data;
+  
+              console.log(data);
+              $.each(data, (key, item) => {
+                var action = "";
+                var status = item.status;
+  
+                action = `<ul class="wrapper">
+                            <li class="icon1 edit">
+                                <span class="tooltip">EDIT</span>
+                            <img id="icons" src="./images/icons/edit.png">
+                            </li>
+                            <li class="icon2 delete">
+                            <span class="tooltip">DELETE</span>
+                            <img id="icons" src="./images/icons/delete.png">
+                            </li>
+                        </ul>`;
+  
+                finalData.push({
+                  couponid: item.couponid,
+                  code: item.code,
+                  discountpercentage: item.discountpercentage,
+                  expirationdate: item.expirationdate,
+                  usagelimit: item.usagelimit,
+                  action: action,
+                });
+              });
+  
+              return finalData;
+            },
+          },
+          columnDefs: [
+            {
+              targets: 1,
+              className: "td-indent",
+            },
+          ],
+          columns: [
+            { data: "couponid" },
+            { data: "code" },
+            { data: "discountpercentage" },
+            { data: "expirationdate" },
+            { data: "usagelimit" },
+            { data: "action" },
+          ],
+          initComplete: function () {},
+        });
+      }
+  
+      $(document).on("click", "#addbtncoupon", function () {
+        console.log("click");
+        var i_coupcode = $("#i_coupcode").val();
+        var i_couppercent = $("#i_couppercent").val();
+        var i_couplimit = $("#i_couplimit").val();
+        var i_coupexdate = $("#i_coupexdate").val();
+  
+        $.ajax({
+          type: "POST",
+          url: "/incentives/save",
+          data: {
+            code: i_coupcode,
+            discountpercentage: i_couppercent,
+            usagelimit: i_couplimit,
+            expirationdate: i_coupexdate,
+          },
+          success: function (result) {
+            LoadTable();
+          },
+          error: function (error) {
+            
+          },
+        });
+      });
+    });
+</script>  

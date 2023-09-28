@@ -1,0 +1,187 @@
+    <!-- LINE -->
+    <div class="col-sm-12 top-title-bar">
+        <label id="tittle-bar">CONTENT MANAGEMENT</label>
+    </div>
+    <!-- END LINE -->
+        
+    <!-- ENTRY -->
+    <div class="col-md-12 entry-container">
+        <div>
+            <form class="needs-validation content-author-image-video-form" novalidate>
+                <!-- Content Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="c_contentid">Content ID</label>
+                        <input type="text" class="form-control" id="c_contentid" placeholder="Content ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="c_title">Title</label>
+                        <input type="text" class="form-control" id="c_title" placeholder="Title" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="c_contenttype">Content Type</label>
+                        <input type="text" class="form-control" id="c_contenttype" placeholder="Content Type" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="c_authorid">Author ID</label>
+                        <input type="text" class="form-control" id="c_authorid" placeholder="Author ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="c_publishdate">Publish Date</label>
+                        <input type="datetime-local" class="form-control" id="c_publishdate" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid publish date.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="c_ispublished">Is Published</label>
+                        <input type="text" class="form-control" id="c_ispublished" placeholder="Is Published" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="c_contentbody">Content Body</label>
+                        <textarea class="form-control" id="c_contentbody" rows="3" placeholder="Enter content body" required></textarea>
+                        <div class="invalid-feedback">
+                            Please provide a valid content body.
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Author Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="a_authorid">Author ID</label>
+                        <input type="text" class="form-control" id="a_authorid" placeholder="Author ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="a_firstname">First Name</label>
+                        <input type="text" class="form-control" id="a_firstname" placeholder="First Name" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="a_lastname">Last Name</label>
+                        <input type="text" class="form-control" id="a_lastname" placeholder="Last Name" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="a_email">Email</label>
+                        <input type="email" class="form-control" id="a_email" placeholder="Email" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="a_bio">Bio</label>
+                        <textarea class="form-control" id="a_bio" rows="3" placeholder="Enter author bio" required></textarea>
+                        <div class="invalid-feedback">
+                            Please provide a valid author bio.
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Image Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="i_imageid">Image ID</label>
+                        <input type="text" class="form-control" id="i_imageid" placeholder="Image ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="i_contentid">Content ID</label>
+                        <input type="text" class="form-control" id="i_contentid" placeholder="Content ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="i_filepath">Image Filepath</label>
+                        <input type="text" class="form-control" id="i_filepath" placeholder="Image Filepath" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="i_alttext">Alt Text</label>
+                        <input type="text" class="form-control" id="i_alttext" placeholder="Alt Text" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Video Section -->
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="v_videoid">Video ID</label>
+                        <input type="text" class="form-control" id="v_videoid" placeholder="Video ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="v_contentid">Content ID</label>
+                        <input type="text" class="form-control" id="v_contentid" placeholder="Content ID" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="v_videourl">Video URL</label>
+                        <input type="text" class="form-control" id="v_videourl" placeholder="Video URL" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="v_duration">Video Duration</label>
+                        <input type="text" class="form-control" id="v_duration" placeholder="Video Duration" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+    
+                <button class="btn btn-success" type="submit">+ Add Content, Author, Image, and Video</button>
+            </form>
+        </div>
+    </div>
+    <!-- END ENTRY -->
+        
+    <!-- LINE -->
+    <div class="col-sm-12 mid-title-bar">
+        <label id="tittle-bar">PRODUCT TABLE</label>
+    </div>
+    <!-- END LINE -->

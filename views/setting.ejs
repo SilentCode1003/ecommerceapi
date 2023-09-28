@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include("./layoutcontent/header.ejs")%>
+  </head>
+  <body>
+    
+    <!-- Topbar Content -->
+    <%- include("./layoutcontent/topbar.ejs")%>
+    <!-- Topbar Content End -->
+
+    <div class="wrapper">
+
+        <!-- Sidebar Content -->
+        <%- include("./layoutcontent/sidebar.ejs")%>
+        <!-- Sidebar Content End -->
+
+        <!-- Page Content -->
+        <div id="content">
+
+          <!-- Main Content -->
+          <%- include("./dashboard/settingAdmin/settingdashboard.ejs")%>
+          <!-- Main Content End -->
+          
+          </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <%- include("./dashboard/settingAdmin/settingscript.ejs")%>
+    <!-- Optional JavaScript -->
+    <%- include("./layoutcontent/scripts.ejs")%>
+       
+</body>
+</html>

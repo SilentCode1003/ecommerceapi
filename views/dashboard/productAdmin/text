@@ -1,0 +1,265 @@
+<!-- LINE -->
+    <div class="col-sm-12 top-title-bar">
+      <label id="tittle-bar">NEW PRODUCT</label>
+    </div>
+  <!-- END LINE -->
+
+  <!-- ENTRY -->
+    <div class="col-md-12 entry-container">
+      <div>
+        <form class="needs-validation combined-form" novalidate>
+          <h4>Product Section</h4>
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="p_name">Product Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="p_name"
+                placeholder="Product Name"
+                required
+              />
+              <div class="valid-tooltip">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="p_price">Product Price</label>
+              <input
+                type="number"
+                class="form-control"
+                id="p_price"
+                placeholder="Product Price"
+                step="0.01"
+                required
+              />
+              <div class="valid-tooltip">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="p_quantity">Quantity Stock</label>
+              <input
+                type="number"
+                class="form-control"
+                id="p_quantity"
+                placeholder="Quantity Stock"
+                required
+              />
+              <div class="invalid-tooltip">
+                Please provide a valid quantity stock.
+              </div>
+            </div>
+          </div>
+          <h4>Category Section</h4>
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="c_categoryid">Category ID</label>
+              <input
+                type="text"
+                class="form-control"
+                id="c_categoryid"
+                placeholder="Category ID"
+                required
+              />
+              <div class="valid-tooltip">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="c_name">Category Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="c_name"
+                placeholder="Category Name"
+                required
+              />
+              <div class="valid-tooltip">Looks good!</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="c_description">Category Description</label>
+              <input
+                type="text"
+                class="form-control"
+                id="c_description"
+                placeholder="Category Description"
+                required
+              />
+              <div class="invalid-tooltip">
+                Please provide a valid category description.
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-3 mb-3">
+              <label for="p_image">Product Image</label>
+              <input type="file" class="form-control" id="p_image" required />
+              <div class="invalid-tooltip">
+                Please provide a valid product image.
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="p_createdat">Created At</label>
+              <input
+                type="datetime-local"
+                class="form-control"
+                id="p_createdat"
+                required
+              />
+              <div class="invalid-tooltip">
+                Please provide a valid creation date.
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="p_updatedat">Updated At</label>
+              <input
+                type="datetime-local"
+                class="form-control"
+                id="p_updatedat"
+                required
+              />
+              <div class="invalid-tooltip">
+                Please provide a valid update date.
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="p_description">Product Description</label>
+              <textarea
+                class="form-control"
+                id="p_description"
+                rows="3"
+                placeholder="Enter product description"
+                required
+              ></textarea>
+              <div class="invalid-feedback">
+                Please provide a valid product description.
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-success" type="submit">+ Add</button>
+        </form>
+      </div>
+    </div>
+  <!-- END ENTRY -->
+
+  <!-- LINE -->
+  <div class="col-sm-12 mid-title-bar">
+    <label id="tittle-bar">PRODUCT TABLE</label>
+  </div>
+  <!-- END LINE -->
+
+  <!-- SA CHART TO
+  function LoadChart(filter) {
+            let chartfilter = filter;
+
+            if (chartfilter == '') {
+                warning('Error', 'Error 404');
+            } else {
+                $.ajax({
+                    type: 'POST',
+                    url: '/salesdetails/getdescription',
+                    data: {
+                        chartfilter: chartfilter,
+                    },
+                    success: function (result) {
+                        if (result.msg == 'success') {
+                            const topSalesItems = processSalesData(result.data);
+                            //console.log(topSalesItems)
+                            if (topSalesItems && topSalesItems.length > 0) {
+                                const labels = topSalesItems.map(item => item.name);
+                                const totalQuantity = topSalesItems.map(item => item.totalQuantity);
+
+                                if (!myChart) {
+                                    const ctx = document.getElementById('myChart').getContext('2d');
+                                    const chartdata = {
+                                        labels: labels,
+                                        datasets: [{
+                                            label: 'Total Sales',
+                                            data: totalQuantity,
+                                            backgroundColor: [
+                                                'rgb(87, 125, 134)',
+                                                'rgb(86, 157, 170)',
+                                                'rgb(135, 203, 185)',
+                                                'rgb(100, 204, 197, 0.75)',
+                                                'rgb(185, 237, 221)',
+                                            ],
+                                        }]
+                                    };
+
+                                    const config = {
+                                        type: 'bar',
+                                        data: chartdata,
+                                        options: {
+                                            maintainAspectRatio: false,
+                                            scales: {
+                                                x: {
+                                                    barPercentage: 0.5,
+                                                    grid: {
+                                                        display: false,
+                                                    },
+                                                },
+                                                y: {
+                                                    ticks: {
+                                                        callback: function(value, index, values) {
+                                                            return ${value.toLocaleString(undefined, { maximumFractionDigits: 0 })};
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            animation: {
+                                                duration: 1000,
+                                                easing: 'easeInOutQuad'
+                                            },
+                                            plugins: {
+                                                legend: {
+                                                    labels: {
+                                                        font: {
+                                                            family: 'Open Sans',
+                                                            size: 14 // Set the font size here
+                                                        }
+                                                    }
+                                                },
+                                                scales: {
+                                                    x: {
+                                                        ticks: {
+                                                            font: {
+                                                                family: 'Open Sans',
+                                                                size: 12 
+                                                            }
+                                                        }
+                                                    },
+                                                    y: {
+                                                        ticks: {
+                                                            font: {
+                                                                family: 'Open Sans',
+                                                                size: 12 
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    };
+
+                                    myChart = new Chart(ctx, config);
+                                } else {
+                                    myChart.data.labels = labels;
+                                    myChart.data.datasets[0].data = totalQuantity;
+                                    myChart.update({
+                                    duration: 1000, 
+                                    easing: 'easeInOutQuad'
+                                });
+                                }
+                                $('#chartContainer').show();
+                                $('#noDataMessage').hide();
+                            } else {
+                                $('#chartContainer').hide();
+                                $('#noDataMessage').show();
+                                console.log('No data available.');
+                            }
+                        }
+                    },
+                    error: function (err) {
+                        errormsg(err);
+                    }
+                });
+            }
+        } -->

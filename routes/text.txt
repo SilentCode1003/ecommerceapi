@@ -1,0 +1,15 @@
+// router.get('/load',(req,res)=>{
+//   let data = [{data:'data'}];
+//   res.json({
+//     msg:'success'
+//   });
+// });
+
+
+// router.post('/save',(req,res)=> {
+//   let fullname = req.body.fullname
+//   res.json({
+//     msg:'success',
+//     data:fullname
+//   });
+// });
